@@ -52,7 +52,9 @@ data_aut %>%
   ggplot(aes(meldedatum, covid_perc, group = bundesland, color = bundesland)) +
   geom_line() +
   labs(title = "Trend of ICU Bed Occupancy of COVID Cases",
-       subtitle = "per Bundesland")
+       subtitle = "per Bundesland",
+       x = "Date", 
+       y = "COVID-19 Cases in % of population")
 
 # install.packages('maptools')
 # install.packages("gpclib", type="source")
@@ -76,7 +78,9 @@ aut_tidy %>%
   ggplot() +
   geom_polygon(aes(long, lat, group = group, fill = covid_perc)) +
   coord_quickmap() +
-  labs(title = "Current Occupancy of COVID-19 cases on ICU")
+  theme_void() +
+  labs(title = "Current Occupancy of COVID-19 cases on ICU",
+       fill = "COVID-19 cases in %")
 
 library(lubridate)
 avg_aut_data <- data_aut %>% 
@@ -98,7 +102,8 @@ aut_tidy %>%
   facet_wrap(~monat) +
   theme_void() +
   scale_fill_gradient2(low = "#0081a7", mid = "#fdfcdc", high = "#f07167", midpoint = midpunkt) +
-  labs(title = "Trend of COVID-19 Bed Occupancy in Austria")
+  labs(title = "Trend of COVID-19 Bed Occupancy in Austria",
+       fill = "COVID-19 cases in %")
 
 ```
 
