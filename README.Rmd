@@ -101,7 +101,7 @@ aut_tidy %>%
   coord_quickmap() +
   facet_wrap(~monat) +
   theme_void() +
-  scale_fill_gradient2(low = "#0081a7", mid = "#fdfcdc", high = "#f07167", midpoint = midpunkt) +
+   
   labs(title = "Trend of COVID-19 Bed Occupancy in Austria",
        fill = "COVID-19 cases in %")
 
